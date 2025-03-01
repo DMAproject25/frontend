@@ -1,0 +1,18 @@
+'Log files:
+C:\Users\Пользователь\Desktop\DMA\frontend\my-project\Users%USERNAME%AppDataLocalnpm-cache\_logs\2025-03-01T19_47_14_296Z-debug-0.log
+
+# npm resolution error report
+
+While resolving: my-project@0.0.0
+Found: react@19.0.0
+node_modules/react
+  react@"^19.0.0" from the root project
+
+Could not resolve dependency:
+peer react@"^16.8.0 || ^17.0.0 || ^18.0.0" from antd-mobile@5.38.1
+node_modules/antd-mobile
+  antd-mobile@"*" from the root project
+
+Fix the upstream dependency conflict, or retry
+this command with --force or --legacy-peer-deps
+to accept an incorrect (and potentially broken) dependency resolution.

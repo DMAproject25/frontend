@@ -1,10 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/vant@4/lib/index.css"/>
+    <script src="https://fastly.jsdelivr.net/npm/vue@3"></script>
+    <script src="https://fastly.jsdelivr.net/npm/vant@4/lib/vant.min.js"></script>
+    <script>
+      // Render the Button component
+      const app = Vue.createApp({
+        template: `<van-button>Button</van-button>`,
+      });
+      app.use(vant);
+    
+      // Register Lazyload directive
+      app.use(vant.Lazyload);
+    
+      // Call function component
+      vant.showToast('Message');
+    
+      app.mount('#app');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Telegram Mini App</title>
+    <!-- Можно добавить темы и цвета для мобильных устройств -->
+    <meta name="theme-color" content="#0088cc">
+    <meta name="color-scheme" content="light dark">
   </head>
   <body>
     <div id="root"></div>
