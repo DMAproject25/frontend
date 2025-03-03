@@ -1,4 +1,4 @@
-import { Provider } from "@/components/ui/provider"
+/* import { Provider } from "@/components/ui/provider"
 import React from "react"
 import ReactDOM from "react-dom/client"
 import './index.css'
@@ -10,4 +10,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <App />
     </Provider>
   </React.StrictMode>,
-)
+) */
