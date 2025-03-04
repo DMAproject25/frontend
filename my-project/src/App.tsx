@@ -1,48 +1,72 @@
-import { Button, HStack } from "@chakra-ui/react"
 
-import { IconButton } from '@chakra-ui/react'
-import { FiHome, FiHeart, FiMap, FiUser } from 'react-icons/fi'
-/* import './App.css'
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route, 
+  Link,  // Для создания ссылок между страницами
+  useNavigate  // Хук для программной навигации
+} from 'react-router-dom';
 
-function App() {
+// Компоненты страниц
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+import LikesPage from './pages/LikesPage';
+import MapPage from './pages/MapPage';
+
+/* import './App.css' */
+
+// Компонент с навигационным меню
+const Navigation = () => {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link to="/">Главная</Link>
+        </li>
+        <li>
+          <Link to="/profile">Профиль</Link>
+        </li>
+        <li>
+          <Link to="/matching">Лайки</Link>
+        </li>
+        <li>
+          <Link to="/chat/:id">Карта</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+// Пример компонента с программной навигацией
+const LikesButton = () => {
+  const navigate = useNavigate();
+
+  const handleStartMatching = () => {
+    navigate('/matching');
+  };
 
   return (
-    <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <HStack>
-      <Button>Click me</Button>
-      <Button>Click me</Button>
-    </HStack>
-    </>
-  )
-}
-
-export default App */
-
+    <button onClick={handleStartMatching}>
+      Начать знакомства
+    </button>
+  );
+};
 
 function App() {
 	return (
-		<div className='flex flex-col min-h-screen bg-gray-900 text-white'>
-			{/* TabBar */}
-			<nav className='bg-[#1F1F1F] border-[#4F4F4F] drop-shadow-[0px_-4px_40px_#4f4f4f80] border-t-2 p-4 fixed bottom-0 w-full shadow-lg'>
-				<HStack className = 'justify-evenly'>
-					<IconButton aria-label='Search database' p={0} size='lg' variant = 'ghost'>  {/* почему то не ghost не работает, видимо придется вручную делать фон прозрачным */}
-						<FiHome />                                                                 {/* также нужно убрать отступы между иконкой и границами кнопки, так как из-за гих иконки слишком маленькие*/}
-					</IconButton>
-					<IconButton aria-label='Search database' p={0} size='lg'>
-						<FiHeart />
-					</IconButton>
-					<IconButton aria-label='Search database' p={0} size='lg'>
-						<FiMap />
-					</IconButton>
-					<IconButton aria-label='Search database' p={0} size='lg'>
-						<FiUser />
-					</IconButton>
-				</HStack>
-			</nav>
-		</div>
+    <Router>
+      <div>
+        <Navigation />
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/matching" element={<LikesPage />} />
+          <Route path="/chat/:id" element={<MapPage />} />
+        </Routes>
+      </div>
+    </Router>
+		
 	)
 }
 
