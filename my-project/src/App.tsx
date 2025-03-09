@@ -18,23 +18,23 @@ import MapPage from './pages/MapPage';
 // Компонент с навигационным меню
 const Navigation = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Главная</Link>
-        </li>
-        <li>
-          <Link to="/profile">Профиль</Link>
-        </li>
-        <li>
-          <Link to="/matching">Лайки</Link>
-        </li>
-        <li>
-          <Link to="/chat/:id">Карта</Link>
-        </li>
-      </ul>
-    </nav>
-  );
+		<nav>
+			<ul>
+				<li>
+					<Link to='/'></Link>
+				</li>
+				<li>
+					<Link to='/matching'></Link>
+				</li>
+				<li>
+					<Link to='/map'></Link>
+				</li>
+				<li>
+					<Link to='/profile'></Link>
+				</li>
+			</ul>
+		</nav>
+	)
 };
 
 // Пример компонента с программной навигацией
@@ -62,7 +62,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/matching" element={<LikesPage />} />
-          <Route path="/chat/:id" element={<MapPage />} />
+          <Route path="/map" element={<MapPage />} />
         </Routes>
       </div>
     </Router>

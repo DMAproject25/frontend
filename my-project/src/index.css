@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,14 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
@@ -39,6 +31,28 @@ h1 {
   line-height: 1.1;
 }
 
+/* Базовые стили для SVG внутри кнопки */
+.icon-button svg {
+  width: 22px;  /* Размер иконки */
+  height: 22px;
+  color: #FFF8F8;
+  transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+/* Изменение цвета и добавление тени при наведении */
+.icon-button:hover svg {
+  color: #FE019A;
+  filter: drop-shadow(0px 0px 25px #ff027a);
+}
+
+/* Изменение цвета и тени при нажатии */
+.icon-button:active svg,
+.icon-button:focus svg,
+.icon-button.clicked svg {
+  color: #FE019A;
+  filter: drop-shadow(0px 0px 25px #ff027a);
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -46,16 +60,9 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
