@@ -31,26 +31,21 @@ h1 {
   line-height: 1.1;
 }
 
-/* Базовые стили для SVG внутри кнопки */
-.icon-button svg {
-  width: 22px;  /* Размер иконки */
-  height: 22px;
-  color: #FFF8F8;
-  transition: color 0.2s ease-in-out, filter 0.2s ease-in-out;
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease, filter 0.3s ease;
 }
 
-/* Изменение цвета и добавление тени при наведении */
+.icon-button.active svg {
+  color: #FE019A !important; /* Цвет активной иконки */
+  filter: drop-shadow(0 0 8px #FE019A);
+}
+
 .icon-button:hover svg {
-  color: #FE019A;
-  filter: drop-shadow(0px 0px 25px #ff027a);
-}
-
-/* Изменение цвета и тени при нажатии */
-.icon-button:active svg,
-.icon-button:focus svg,
-.icon-button.clicked svg {
-  color: #FE019A;
-  filter: drop-shadow(0px 0px 25px #ff027a);
+  color: #FE019A; /* Цвет при наведении */
+  filter: drop-shadow(0 0 6px #FE019A);
 }
 
 button {
