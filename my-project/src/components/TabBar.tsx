@@ -5,7 +5,7 @@ import '../index.css'
 
 const TabBar: React.FC = () => {
 	return (
-		<nav className='bg-[#1F1F1F] border-[#4F4F4F] drop-shadow-[0px_-4px_40px_#4f4f4f80] border-t-2 p-4 fixed bottom-0 w-full shadow-lg'>
+		<nav className='bg-[#1F1F1F] border-[#4F4F4F] drop-shadow-[0px_-4px_40px_#4f4f4f80] border-t-2 h-[53px] fixed bottom-0 w-screen shadow-lg'>
 			<HStack className='justify-evenly'>
 				<NavLink
 					to='/'
@@ -13,8 +13,8 @@ const TabBar: React.FC = () => {
 						isActive ? 'icon-button active' : 'icon-button'
 					}
 				>
-					<IconButton aria-label='Home' variant='ghost' p={0} size='lg'>
-						<FiHome className='w-[22px] h-[22px]' />
+					<IconButton aria-label='Home' p={0} size='lg'>
+						<FiHome className='w-[22px] h-[22px]'/>
 					</IconButton>
 				</NavLink>
 
@@ -24,8 +24,8 @@ const TabBar: React.FC = () => {
 						isActive ? 'icon-button active' : 'icon-button'
 					}
 				>
-					<IconButton aria-label='Likes' variant='ghost' p={0} size='lg'>
-						<FiHeart className='w-[22px] h-[22px]' />
+					<IconButton aria-label='Likes' p={0} size='lg'>
+						<FiHeart className='w-[22px] h-[22px]'/>
 					</IconButton>
 				</NavLink>
 
@@ -35,7 +35,7 @@ const TabBar: React.FC = () => {
 						isActive ? 'icon-button active' : 'icon-button'
 					}
 				>
-					<IconButton aria-label='Map' variant='ghost' p={0} size='lg'>
+					<IconButton aria-label='Map' p={0} size='lg'>
 						<FiMap className='w-[22px] h-[22px]' />
 					</IconButton>
 				</NavLink>
@@ -46,7 +46,7 @@ const TabBar: React.FC = () => {
 						isActive ? 'icon-button active' : 'icon-button'
 					}
 				>
-					<IconButton aria-label='Profile' variant='ghost' p={0} size='lg'>
+					<IconButton aria-label='Profile' p={0} size='lg'>
 						<FiUser className='w-[22px] h-[22px]' />
 					</IconButton>
 				</NavLink>
