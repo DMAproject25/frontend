@@ -32,15 +32,22 @@ function HomePage() {
 					</div>
 					<div className='w-screen px-[10px] overflow-hidden'>
 						<div className='bg-[#50d71e] p-[12px] rounded-[16px] overflow-hidden'>
-							<p className='font-[Inter] font-black text-left text-[14px]'>
+							<p className='font-[Inter] font-bold text-left text-[14px]'>
 								Интересы
 							</p>
-							<ul>
-								<li>Интерес 1</li>
-								<li>Интерес 2</li>
-								<li>Интерес 3</li>
-								<li>Интерес 4</li>
-								<li>Интерес 5</li>
+							<ul className=''>
+								<li className='me-2 font-[Inter] font-bold text-center text-[10px] bg-[#2C2C2C] inline-block py-[4px] px-[8px] rounded-[20px]'>
+									&#129302; IT и Технологии
+								</li>
+								<li className='me-2 font-[Inter] font-bold text-center text-[10px] bg-[#2C2C2C] inline-block py-[4px] px-[8px] rounded-[20px]'>
+									Музеи и галереи
+								</li>
+								<li className='me-2 font-[Inter] font-bold text-center text-[10px] bg-[#2C2C2C] inline-block py-[4px] px-[8px] rounded-[20px]'>
+									Компьютерные игры
+								</li>
+								<li className='me-2 font-[Inter] font-bold text-center text-[10px] bg-[#2C2C2C] inline-block py-[4px] px-[8px] rounded-[20px]'>
+									Мода и красота
+								</li>
 							</ul>
 						</div>
 					</div>

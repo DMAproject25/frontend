@@ -5,7 +5,7 @@ import '../index.css'
 
 const TabBar: React.FC = () => {
 	return (
-		<nav className='bg-[#1F1F1F] border-[#4F4F4F] shadow-[0px_-4px_40px_#4f4f4f80] -mb-px border-t-2 h-[53px] fixed bottom-0 w-screen shadow-lg'>
+		<nav className='bg-[#1F1F1F] border-[#4F4F4F] shadow-[0_-4px_40px_rgba(79,79,79,0.5)] -mb-[2px] border-t-2 h-[53px] fixed bottom-0 w-screen shadow-lg'>
 			<HStack className='justify-evenly'>
 				<NavLink
 					to='/'
