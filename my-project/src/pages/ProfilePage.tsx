@@ -1,4 +1,5 @@
 import { HStack, Stack, VStack, Image, Flex, Box, Button } from '@chakra-ui/react'
+import { FiEdit2 } from 'react-icons/fi'
 
 function ProfilePage() {
     // Массив с данными интересов
@@ -32,7 +33,7 @@ function ProfilePage() {
 
 				<div className='w-screen px-[10px] overflow-hidden'>
 					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
-						<p className='font-[Inter] font-black text-left text-[18px]'>
+						<p className='font-[Inter] font-bold text-left text-[14px]'>
 							Интересы
 						</p>
 						<p
@@ -58,17 +59,17 @@ function ProfilePage() {
 
 						{/* Кнопка редактирования */}
 						<Button
-							className='w-full bg-[#2C2C2C] rounded-[12px] py-[10px] flex items-center justify-center gap-[8px]'
+							className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
 							_hover={{ bg: '#2A2A2A' }}
 						>
-							<span>✏️</span>
+							<FiEdit2/>
 							<span className='font-[Inter] text-[14px]'>Редактировать</span>
 						</Button>
 					</div>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
 					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
-						<p className='font-[Inter] font-black text-left text-[18px]'>
+						<p className='font-[Inter] font-bold text-left text-[14px]'>
 							Музыкальные предпочтения
 						</p>
 						<p
@@ -93,10 +94,10 @@ function ProfilePage() {
 
 						{/* Кнопка редактирования */}
 						<Button
-							className='w-full bg-[#2C2C2C] rounded-[12px] py-[10px] flex items-center justify-center gap-[8px]'
+							className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
 							_hover={{ bg: '#2A2A2A' }}
 						>
-							<span>✏️</span>
+							<FiEdit2 />
 							<span className='font-[Inter] text-[14px]'>Редактировать</span>
 						</Button>
 					</div>
