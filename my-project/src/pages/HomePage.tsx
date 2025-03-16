@@ -1,6 +1,8 @@
-import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'
 import { Dumbbell, Cigarette, Wine } from 'lucide-react'
-import { FiHeart, FiMap, FiMaximize2 } from 'react-icons/fi'
+import { FiHeart, FiMaximize2 } from 'react-icons/fi'
+
+import PhotosCarousel from '../components/common/PhotosCarousel'
+import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'
 
 function HomePage() {
 	const interests = [
@@ -36,21 +38,23 @@ function HomePage() {
 		<Stack className='items-center bg-[#000000] relative'>
 			{/* Первый Stack (фиксированный) */}
 			<Stack className='w-full fixed top-0 left-0 z-1 bg-[#000000]'>
-				<div className='w-screen px-[10px] pt-[54px]'>
+				<div className='w-screen px-[10px] pt-[44px]'>
 					<p className='font-[Inter] font-bold text-center text-[18px]'>
 						DMA - Work In Progress
 					</p>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#50d71e] rounded-[16px] h-[477px] overflow-hidden'>
-						<Image src='https://images.unsplash.com/photo-1440589473619-3cde28941638?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
+					<div className='isolate bg-[#1F1F1F] rounded-[16px] h-[477px] overflow-hidden'>
+						<Box className='isolate'>
+							<PhotosCarousel />
+						</Box>
 					</div>
 				</div>
 			</Stack>
 			{/* Второй вложенный Stack (основная информация о пользователе) */}
-			<Stack className='bg-[#000000] relative z-2 mt-[574px] rounded-[40px]'>
+			<Stack className='bg-[#000000] relative z-2 mt-[564px] rounded-[40px]'>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#50d71e] p-[12px] rounded-[16px] overflow-hidden'>
+					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
 						<p className='font-[Inter] font-black text-left text-[18px]'>
 							Мириам, 19
 						</p>
@@ -60,8 +64,8 @@ function HomePage() {
 					</div>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#50d71e] p-[12px] rounded-[16px] overflow-hidden'>
-						<p className='font-[Inter] font-bold text-left text-[14px]'>
+					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
+						<p className='font-[Inter] font-bold text-left text-[14px] mb-2'>
 							Интересы
 						</p>
 						<Flex flexWrap='wrap' gap='8px' mb='16px'>
@@ -80,8 +84,8 @@ function HomePage() {
 					</div>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#50d71e] p-[12px] rounded-[16px] overflow-hidden'>
-						<p className='font-[Inter] font-bold text-left text-[14px]'>
+					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
+						<p className='font-[Inter] font-bold text-left text-[14px] mb-2'>
 							О себе
 						</p>
 						<Flex flexWrap='wrap' gap='8px' mb='16px'>
@@ -100,8 +104,8 @@ function HomePage() {
 					</div>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#50d71e] p-[12px] rounded-[16px] overflow-hidden'>
-						<p className='font-[Inter] font-bold text-left text-[14px]'>
+					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
+						<p className='font-[Inter] font-bold text-left text-[14px] mb-2'>
 							Музыка
 						</p>
 						<Flex flexWrap='wrap' gap='8px' mb='16px'>

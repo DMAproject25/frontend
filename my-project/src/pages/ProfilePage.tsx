@@ -74,7 +74,7 @@ function ProfilePage() {
 						</p>
 						<p
 							style={{ color: '#FFFFFF66' }}
-							className='font-[Inter]  font-semibold text-left text-[12px] '
+							className='font-[Inter]  font-semibold text-left text-[12px'
 						>
 							Добавьте своих любимых исполнителей. Чем больше исполнителей - тем
 							выше ваш рейтинг
