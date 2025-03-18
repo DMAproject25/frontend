@@ -29,6 +29,14 @@ function ProfilePage() {
 		{ id: 'night-sity', icon: <FiMapPin size={12} />, label: 'Найт-Сити' },
 	]
 
+	const status = [
+		{
+			id: 'online',
+			label: 'Онлайн',
+			icon: <span className='w-1.5 h-1.5 bg-[#00FF00] rounded-full'></span>,
+		},
+	]
+
 	const target = [
 		{ value: 'relationships', title: 'Отношения', icon: '💘' },
 		{ value: 'friendship', title: 'Дружба', icon: '🤝' },
@@ -82,15 +90,34 @@ function ProfilePage() {
 								{city.map(city => (
 									<Box
 										key={city.id}
-										className='bg-[#2C2C2C] font-[Inter] font-semibold text-[14px] rounded-[20px] py-[4px] px-[8px] flex items-center gap-[4px] mt-1'
+										className='bg-[#2C2C2C] font-[Inter] font-semibold text-[10px] rounded-[20px] py-[4px] px-[8px] flex items-center gap-[4px] mt-1'
 									>
 										<span>{city.icon}</span>
-										<span className='font-[Inter] text-[12px]'>
+										<span className='font-[Inter] text-[10px]'>
 											{city.label}
 										</span>
 									</Box>
 								))}
 							</Flex>
+						</div>
+						<div className='ml-auto text-right'>
+							<Flex flexWrap='wrap' gap='8px' justify='flex-end'>
+								{status.map(status => (
+									<Box
+										key={status.id}
+										className='bg-[#2C2C2C] font-[Inter] font-semibold text-[10px] rounded-[20px] py-[4px] px-[8px] flex items-center gap-[4px] mb-2'
+									>									
+										{status.icon}
+										<span className='font-[Inter] text-[10px]'>
+											{status.label}
+										</span>
+									</Box>
+								))}
+							</Flex>
+							<div className='flex font-[Inter] font-semibold text-left text-[12px]'>
+								<p>Рейтинг анкеты:&nbsp;</p>
+								<p className='font-black text-[#00FF00]'>B+</p>
+							</div>
 						</div>
 					</HStack>
 				</div>
