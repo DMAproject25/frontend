@@ -1,7 +1,22 @@
-import { defineStyle, Stack, HStack,Avatar, Icon, Flex, Box, RadioCard, Button, Slider} from '@chakra-ui/react'
-import { FiEdit2, FiMapPin, FiCheck} from 'react-icons/fi'
+import {
+	defineStyle,
+	Stack,
+	HStack,
+	Avatar,
+	Icon,
+	Flex,
+	Box,
+	RadioCard,
+	Button,
+	CloseButton,
+	Dialog,
+	Portal,
+	Slider,
+} from '@chakra-ui/react'
+import { FiEdit2, FiMapPin, FiCheck, FiHeart, FiMaximize2 } from 'react-icons/fi'
 import { Textarea } from '@chakra-ui/react'	
 import { useState } from 'react'
+import { Dumbbell, Cigarette, Wine } from 'lucide-react'
 
 function ProfilePage() {
 	// Массив с данными интересов
@@ -35,6 +50,14 @@ function ProfilePage() {
 			label: 'Онлайн',
 			icon: <span className='w-1.5 h-1.5 bg-[#00FF00] rounded-full'></span>,
 		},
+	]
+
+	const personal_data = [
+		{ id: 'relationships', icon: <FiHeart />, label: 'Свободен' },
+		{ id: 'smoke', icon: <Cigarette className='w-3.5 h-3.5'/>, label: 'Не курю' },
+		{ id: 'alcohol', icon: <Wine className='w-3.5 h-3.5' />, label: 'Не пью' },
+		{ id: 'growth', icon: <FiMaximize2 className='w-3.5 h-3.5'/>, label: '175 см' },
+		{ id: 'sport', icon: <Dumbbell className='w-3.5 h-3.5'/>, label: 'Занимаюсь в зале' },
 	]
 
 	const target = [
@@ -106,7 +129,7 @@ function ProfilePage() {
 									<Box
 										key={status.id}
 										className='bg-[#2C2C2C] font-[Inter] font-semibold text-[10px] rounded-[20px] py-[4px] px-[8px] flex items-center gap-[4px] mb-2'
-									>									
+									>
 										{status.icon}
 										<span className='font-[Inter] text-[10px]'>
 											{status.label}
@@ -147,10 +170,47 @@ function ProfilePage() {
 					<Textarea
 						autoresize
 						variant='subtle'
-						placeholder='Start typing...'
+						placeholder='23 года, дизайнер из Санкт-Петербурга'
 						minH='8vh'
-						className='bg-[#2C2C2C] rounded-[15px] p-2 font-[Inter]  font-medium text-left text-[12px]'
+						className='bg-[#2C2C2C] rounded-[15px] p-2 font-[Inter] font-medium focus:outline-none focus:ring-[#FF027A] focus:ring-1 text-left text-[12px] placeholder:text-[#FFFFFF66]'
 					/>
+				</div>
+			</div>
+
+			<div className='w-screen px-[10px] overflow-hidden'>
+				<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
+					<p className='font-[Inter] font-bold text-left text-[14px]'>
+						Личная информация
+					</p>
+					<p
+						style={{ color: '#FFFFFF66' }}
+						className='font-[Inter]  font-medium text-left text-[12px] mb-2'
+					>
+						Заполните личную информацию о себе. Чем больше информации - тем выше
+						рейтинг анкеты
+					</p>
+					<Flex flexWrap='wrap' gap='8px' mb='16px'>
+						{personal_data.map(personal_data => (
+							<Box
+								key={personal_data.id}
+								className='bg-[#2C2C2C] font-[Inter] font-semibold text-[14px] rounded-[20px] py-[4px] px-[8px] flex items-center gap-[4px]'
+							>
+								<span>{personal_data.icon}</span>
+								<span className='font-[Inter] text-[11px]'>
+									{personal_data.label}
+								</span>
+							</Box>
+						))}
+					</Flex>
+
+					{/* Кнопка редактирования */}
+					<Button
+						className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
+						_hover={{ bg: '#2A2A2A' }}
+					>
+						<FiEdit2 />
+						<span className='font-[Inter] text-[14px]'>Редактировать</span>
+					</Button>
 				</div>
 			</div>
 
@@ -221,14 +281,43 @@ function ProfilePage() {
 						))}
 					</Flex>
 
-					{/* Кнопка редактирования */}
-					<Button
-						className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
-						_hover={{ bg: '#2A2A2A' }}
-					>
-						<FiEdit2 />
-						<span className='font-[Inter] text-[14px]'>Редактировать</span>
-					</Button>
+					<Dialog.Root motionPreset='slide-in-bottom' size='cover'>
+						<Dialog.Trigger asChild>
+							<Button
+								className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
+								_hover={{ bg: '#2A2A2A' }}
+							>
+								<FiEdit2 />
+								<span className='font-[Inter] text-[14px]'>Редактировать</span>
+							</Button>
+						</Dialog.Trigger>
+						<Portal>
+							<Dialog.Backdrop className='fixed top-0 left-0 w-full h-[calc(100vh-60px)] bg-black/50 pointer-events-none' />
+							<Dialog.Positioner className='fixed bottom-0 h-[120px] left-0 w-full max-w-[500px] mx-auto'>
+								<Dialog.Content className='bg-[#1F1F1F] rounded-t-2xl pointer-events-auto'>
+									<Dialog.Header>
+										<Dialog.Title>Dialog Title</Dialog.Title>
+									</Dialog.Header>
+									<Dialog.Body>
+										<p>
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+											Sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua.
+										</p>
+									</Dialog.Body>
+									<Dialog.Footer>
+										<Dialog.ActionTrigger asChild>
+											<Button variant='outline'>Cancel</Button>
+										</Dialog.ActionTrigger>
+										<Button>Save</Button>
+									</Dialog.Footer>
+									<Dialog.CloseTrigger asChild>
+										<CloseButton size='sm' />
+									</Dialog.CloseTrigger>
+								</Dialog.Content>
+							</Dialog.Positioner>
+						</Portal>
+					</Dialog.Root>
 				</div>
 			</div>
 			<div className='w-screen px-[10px] overflow-hidden'>

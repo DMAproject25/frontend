@@ -27,10 +27,10 @@ function HomePage() {
 	
 	const about = [
 		{ id: 'relationships', icon: <FiHeart />, label: 'Свободен' },
-		{ id: 'smoke', icon: <Cigarette width={20} height={15}/>, label: 'Не курю' },
-		{ id: 'alcohol', icon: <Wine width={20} height={15} />, label: 'Не пью' },
-		{ id: 'growth', icon: <FiMaximize2 width={20} height={15}/>, label: '175 см' },
-		{ id: 'sport', icon: <Dumbbell width={20} height={15}/>, label: 'Занимаюсь в зале' },
+		{ id: 'smoke', icon: <Cigarette className='w-3.5 h-3.5'/>, label: 'Не курю' },
+		{ id: 'alcohol', icon: <Wine className='w-3.5 h-3.5' />, label: 'Не пью' },
+		{ id: 'growth', icon: <FiMaximize2 className='w-3.5 h-3.5'/>, label: '175 см' },
+		{ id: 'sport', icon: <Dumbbell className='w-3.5 h-3.5'/>, label: 'Занимаюсь в зале' },
 	]
 
 
