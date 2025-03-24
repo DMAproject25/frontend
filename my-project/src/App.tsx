@@ -8,6 +8,10 @@ import HomePage from './pages/HomePage'
 import ProfilePage from './pages/ProfilePage'
 import LikesPage from './pages/LikesPage'
 import MapPage from './pages/MapPage'
+import ProfileMusicEdit from './pages/ProfileMusicEdit'
+import ProfileInterestsEdit from './pages/ProfileInterestsEdit'
+import ProfilePersonalEdit from './pages/ProfilePersonalEdit'
+
 import TabBar from './components/TabBar'
 
 const App: React.FC = () => {
@@ -29,6 +33,9 @@ const MainContent: React.FC = () => {
 				<Route path='/profile' element={<ProfilePage />} />
 				<Route path='/matching' element={<LikesPage />} />
 				<Route path='/map' element={<MapPage />} />
+				<Route path='/profile/profile-music-edit' element={<ProfileMusicEdit />}/>
+				<Route path='/profile/profile-interests-edit' element={<ProfileInterestsEdit />}/>
+				<Route path='/profile/profile-personal-edit' element={<ProfilePersonalEdit />}/>
 			</Routes>
 			{!hideTabBar && <TabBar />} {/* Подключаем TabBar на всех страницах */}
 		</div>

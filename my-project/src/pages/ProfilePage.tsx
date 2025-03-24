@@ -3,23 +3,25 @@ import {
 	Stack,
 	HStack,
 	Avatar,
-	Icon,
 	Flex,
 	Box,
 	RadioCard,
 	Button,
-	CloseButton,
-	Dialog,
-	Portal,
 	Slider,
 } from '@chakra-ui/react'
 import { FiEdit2, FiMapPin, FiCheck, FiHeart, FiMaximize2 } from 'react-icons/fi'
 import { Textarea } from '@chakra-ui/react'	
 import { useState } from 'react'
 import { Dumbbell, Cigarette, Wine } from 'lucide-react'
+import { Routes, Route, Outlet } from 'react-router-dom'
+import ProfileMusicEdit from './ProfileMusicEdit'
+import ProfileInterestsEdit from './ProfileInterestsEdit'
+import ProfilePersonalEdit from './ProfilePersonalEdit'
+import { useNavigate } from 'react-router-dom'
 
 function ProfilePage() {
 	// Массив с данными интересов
+	const navigate = useNavigate()
 	const interests = [
 		{ id: 'it-tech', icon: '💻', label: 'IT и технологии' },
 		{ id: 'museums', icon: '🏛', label: 'Музеи и галереи' },
@@ -83,12 +85,24 @@ function ProfilePage() {
 
 	return (
 		<Stack className='items-center bg-[#000000] relative'>
+			<Routes>
+				<Route
+					path='/profile/profile-music-edit'
+					element={<ProfileMusicEdit />}
+				/>
+				<Route
+					path='/profile/profile-interests-edit'
+					element={<ProfileInterestsEdit />}
+				/>
+			</Routes>
+
+			<Outlet />
+
 			<div className='w-screen px-[10px] pt-[54px]'>
 				<p className='font-[Inter] font-bold text-center text-[18px]'>
 					DMA - Work In Progress
 				</p>
 			</div>
-
 			<div className='w-screen px-[10px] overflow-hidden'>
 				<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
 					<HStack>
@@ -205,6 +219,7 @@ function ProfilePage() {
 
 					{/* Кнопка редактирования */}
 					<Button
+						onClick={() => navigate('/profile/profile-personal-edit')}
 						className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
 						_hover={{ bg: '#2A2A2A' }}
 					>
@@ -280,44 +295,14 @@ function ProfilePage() {
 							</Box>
 						))}
 					</Flex>
-
-					<Dialog.Root motionPreset='slide-in-bottom' size='cover'>
-						<Dialog.Trigger asChild>
-							<Button
-								className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
-								_hover={{ bg: '#2A2A2A' }}
-							>
-								<FiEdit2 />
-								<span className='font-[Inter] text-[14px]'>Редактировать</span>
-							</Button>
-						</Dialog.Trigger>
-						<Portal>
-							<Dialog.Backdrop className='fixed top-0 left-0 w-full h-[calc(100vh-60px)] bg-black/50 pointer-events-none' />
-							<Dialog.Positioner className='fixed bottom-0 h-[120px] left-0 w-full max-w-[500px] mx-auto'>
-								<Dialog.Content className='bg-[#1F1F1F] rounded-t-2xl pointer-events-auto'>
-									<Dialog.Header>
-										<Dialog.Title>Dialog Title</Dialog.Title>
-									</Dialog.Header>
-									<Dialog.Body>
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-											Sed do eiusmod tempor incididunt ut labore et dolore magna
-											aliqua.
-										</p>
-									</Dialog.Body>
-									<Dialog.Footer>
-										<Dialog.ActionTrigger asChild>
-											<Button variant='outline'>Cancel</Button>
-										</Dialog.ActionTrigger>
-										<Button>Save</Button>
-									</Dialog.Footer>
-									<Dialog.CloseTrigger asChild>
-										<CloseButton size='sm' />
-									</Dialog.CloseTrigger>
-								</Dialog.Content>
-							</Dialog.Positioner>
-						</Portal>
-					</Dialog.Root>
+					<Button
+						onClick={() => navigate('/profile/profile-interests-edit')}
+						className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
+						_hover={{ bg: '#2A2A2A' }}
+					>
+						<FiEdit2 />
+						<span className='font-[Inter] text-[14px]'>Редактировать</span>
+					</Button>
 				</div>
 			</div>
 			<div className='w-screen px-[10px] overflow-hidden'>
@@ -345,6 +330,7 @@ function ProfilePage() {
 
 					{/* Кнопка редактирования */}
 					<Button
+						onClick={() => navigate('/profile/profile-music-edit')}
 						className='w-full bg-[#2C2C2C] rounded-[10px] py-[10px] flex items-center justify-center gap-[8px]'
 						_hover={{ bg: '#2A2A2A' }}
 					>
