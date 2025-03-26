@@ -5,6 +5,16 @@ import CarouselWrapper from '../components/common/CarouselWrapper'
 import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'
 
 function HomePage() {
+
+	const userImages = [
+		'src/assets/images/image.png',
+		'src/assets/images/image3.jpg'
+	];
+
+	const handleImageChange = (index: number) => {
+		console.log(`Switched to image ${index}`);
+	};
+
 	const interests = [
 		{ id: 'it-tech', icon: '💻', label: 'IT и технологии' }, // возможно сюда нужно будет добавить булевую переменную,
 		{ id: 'museums', icon: '🏛', label: 'Музеи и галереи' }, // показывающую совпадает ли данный интерес с интересом пользователя
@@ -45,9 +55,10 @@ function HomePage() {
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
 					<div className='bg-[#1F1F1F] rounded-[16px] h-[477px] overflow-hidden'>
+
 						<CarouselWrapper/>
 {/* 						<Image src='https://images.unsplash.com/photo-1610384466709-9b83df910cc5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
- */}					</div>
+ */}				</div>
 				</div>
 			</Stack>
 			{/* Второй вложенный Stack (основная информация о пользователе) */}
