@@ -1,6 +1,6 @@
 import { Dumbbell, Cigarette, Wine } from 'lucide-react'
 import { FiHeart, FiMaximize2 } from 'react-icons/fi'
-
+import CustomCarousel from "../components/common/CustomCarousel"
 import CarouselWrapper from '../components/common/CarouselWrapper'
 import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'
 
@@ -54,11 +54,9 @@ function HomePage() {
 					</p>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-					<div className='bg-[#1F1F1F] rounded-[16px] h-[477px] overflow-hidden'>
-
-						<CarouselWrapper/>
-{/* 						<Image src='https://images.unsplash.com/photo-1610384466709-9b83df910cc5?q=80&w=2187&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' />
- */}				</div>
+				<div className="flex justify-center items-center  bg-gray-900">
+                    <CustomCarousel />
+                </div>
 				</div>
 			</Stack>
 			{/* Второй вложенный Stack (основная информация о пользователе) */}

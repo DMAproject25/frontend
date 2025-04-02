@@ -25,7 +25,7 @@ const CAROUSEL_IMAGES = [
 const CarouselComponent: React.FC = () => {
   return (
     <Carousel 
-      slide={false} 
+      slide={true} 
       interval={10000} 
       indicators={true}
       className="h-100" // Убедимся, что карусель занимает всю высоту
