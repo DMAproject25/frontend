@@ -2,6 +2,8 @@ import { Dumbbell, Cigarette, Wine } from 'lucide-react'
 import { FiHeart, FiMaximize2 } from 'react-icons/fi'
 import CustomCarousel from "../components/common/CustomCarousel"
 import CarouselWrapper from '../components/common/CarouselWrapper'
+import LikeButton from '@/components/buttons/LikeButton'
+import RejectButton from '@/components/buttons/RejectButton'
 import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'
 
 function HomePage() {
@@ -42,6 +44,17 @@ function HomePage() {
 		{ id: 'growth', icon: <FiMaximize2 className='w-3.5 h-3.5'/>, label: '175 см' },
 		{ id: 'sport', icon: <Dumbbell className='w-3.5 h-3.5'/>, label: 'Занимаюсь в зале' },
 	]
+
+	 // Обработчики для кнопок
+	 const handleLike = () => {
+		console.log('Пользователь лайкнут');
+		// Здесь логика для лайка
+	  };
+	
+	  const handleReject = () => {
+		console.log('Пользователь отклонен');
+		// Здесь логика для отклонения
+	  };
 
 
 	return (
@@ -132,6 +145,15 @@ function HomePage() {
 				</div>
 				<div className='h-[10vh]'></div>
 			</Stack>
+			{/* Фиксированные кнопки внизу экрана */}
+			<div className="fixed bottom-12 left-0 w-full flex justify-between items-center gap-4 pb-4 pt-2  z-20">
+              <div className='ml-7'>
+			    <RejectButton onReject={handleReject} />
+			  </div>
+			  <div className='mr-7'>
+			    <LikeButton initialCount={0} onLike={handleLike} />
+			  </div>
+            </div>
 		</Stack>
 	)
 }
