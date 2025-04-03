@@ -67,13 +67,13 @@ function HomePage() {
 					</p>
 				</div>
 				<div className='w-screen px-[10px] overflow-hidden'>
-				<div className="flex justify-center items-center  bg-gray-900">
-                    <CustomCarousel />
-                </div>
+					<div className='flex justify-center items-center bg-transparent rounded-[16px] overflow-hidden'>
+						<CustomCarousel />
+					</div>
 				</div>
 			</Stack>
 			{/* Второй вложенный Stack (основная информация о пользователе) */}
-			<Stack className='bg-[#000000] relative z-2 mt-[564px] rounded-[40px]'>
+			<Stack className='bg-[#000000] relative z-2 mt-[537px] rounded-[40px]'>
 				<div className='w-screen px-[10px] overflow-hidden'>
 					<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
 						<p className='font-[Inter] font-black text-left text-[18px]'>
@@ -146,14 +146,14 @@ function HomePage() {
 				<div className='h-[10vh]'></div>
 			</Stack>
 			{/* Фиксированные кнопки внизу экрана */}
-			<div className="fixed bottom-12 left-0 w-full flex justify-between items-center gap-4 pb-4 pt-2  z-20">
-              <div className='ml-7'>
-			    <RejectButton onReject={handleReject} />
-			  </div>
-			  <div className='mr-7'>
-			    <LikeButton initialCount={0} onLike={handleLike} />
-			  </div>
-            </div>
+			<div className='fixed bottom-12 left-0 w-full flex justify-between items-center gap-4 pb-4 pt-2  z-20'>
+				<div className='ml-7'>
+					<RejectButton onReject={handleReject} />
+				</div>
+				<div className='mr-7'>
+					<LikeButton initialCount={0} onLike={handleLike} />
+				</div>
+			</div>
 		</Stack>
 	)
 }

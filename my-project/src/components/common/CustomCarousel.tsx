@@ -60,37 +60,37 @@ const CustomCarousel: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full max-w-md mx-auto overflow-hidden">
-      <div
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-        {CAROUSEL_IMAGES.map((src, index) => (
-          <div key={index} className="w-full flex-shrink-0">
-            <img
-              src={src}
-              className="w-full h-[450px] object-cover rounded-lg"
-              alt={`Slide ${index + 1}`}
-            />
-          </div>
-        ))}
-      </div>
+		<div className='relative w-full max-w-md mx-auto overflow-hidden'>
+			<div
+				className='flex transition-transform duration-500 ease-in-out'
+				style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+				onTouchStart={handleTouchStart}
+				onTouchEnd={handleTouchEnd}
+			>
+				{CAROUSEL_IMAGES.map((src, index) => (
+					<div key={index} className='w-full flex-shrink-0'>
+						<img
+							src={src}
+							className='w-full h-[450px] object-cover rounded-[16px]'
+							alt={`Slide ${index + 1}`}
+						/>
+					</div>
+				))}
+			</div>
 
-      {/* Полоски-индикаторы */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
-        {CAROUSEL_IMAGES.map((_, index) => (
-          <span
-            key={index}
-            className={`h-[3px] w-5 rounded-full transition ${
-              index === currentIndex ? "bg-white" : "bg-gray-400"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
+			{/* Полоски-индикаторы */}
+			<div className='absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2'>
+				{CAROUSEL_IMAGES.map((_, index) => (
+					<span
+						key={index}
+						className={`h-[3px] w-5 rounded-full transition ${
+							index === currentIndex ? 'bg-white' : 'bg-gray-400'
+						}`}
+					/>
+				))}
+			</div>
+		</div>
+	)
 };
 
 export default CustomCarousel;
