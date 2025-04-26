@@ -94,20 +94,18 @@ class DatingApi {
     return this.api.get<MatchUser[]>('/matches');
   }
 
-  // Получить историю сообщений с конкретным пользователем
-  async getMessages(userId: string, params?: { limit?: number; before?: number }): Promise<MessageData[]> {
+
+/*   async getMessages(userId: string, params?: { limit?: number; before?: number }): Promise<MessageData[]> {
     return this.api.get<MessageData[]>(`/messages/${userId}`, params);
   }
 
-  // Отправить сообщение пользователю
   async sendMessage(userId: string, text: string): Promise<MessageData> {
     return this.api.post<MessageData>(`/messages/${userId}`, { text });
   }
 
-  // Отметить сообщения как прочитанные
   async markMessagesAsRead(userId: string, messageIds: string[]): Promise<void> {
     return this.api.post<void>(`/messages/${userId}/read`, { messageIds });
-  }
+  } */
 
   // Удалить совпадение (unmatch)
   async unmatchUser(userId: string): Promise<void> {
