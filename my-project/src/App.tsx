@@ -11,6 +11,7 @@ import MapPage from './pages/MapPage'
 import ProfileMusicEdit from './pages/ProfileMusicEdit'
 import ProfileInterestsEdit from './pages/ProfileInterestsEdit'
 import ProfilePersonalEdit from './pages/ProfilePersonalEdit'
+import {ProfileDataProvider} from './store/context/ProfileDataContext'
 
 import TabBar from './components/TabBar'
 
@@ -30,7 +31,7 @@ const MainContent: React.FC = () => {
 		<div className='flex flex-col min-h-screen bg-gray-900 text-white'>
 			<Routes>
 				<Route path='/' element={<HomePage />} />
-				<Route path='/profile' element={<ProfilePage />} />
+				<Route path='/profile' element={<ProfileDataProvider><ProfilePage /></ProfileDataProvider>} />
 				<Route path='/matching' element={<LikesPage />} />
 				<Route path='/map' element={<MapPage />} />
 				<Route path='/profile/profile-music-edit' element={<ProfileMusicEdit />}/>

@@ -1,7 +1,6 @@
 import { Dumbbell, Cigarette, Wine } from 'lucide-react'
 import { FiHeart, FiMaximize2 } from 'react-icons/fi'
 import CustomCarousel from "../components/common/CustomCarousel"
-import CarouselWrapper from '../components/common/CarouselWrapper'
 import LikeButton from '@/components/buttons/LikeButton'
 import RejectButton from '@/components/buttons/RejectButton'
 import { HStack, Stack, VStack, Image, Flex, Box } from '@chakra-ui/react'

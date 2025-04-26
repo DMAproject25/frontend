@@ -228,7 +228,7 @@ function ProfilePage() {
 					</Button>
 				</div>
 			</div>
-
+			
 			<div className='w-screen px-[10px] overflow-hidden'>
 				<div className='bg-[#1F1F1F] p-[12px] rounded-[16px] overflow-hidden'>
 					<p className='font-[Inter] font-bold text-left text-[14px]'>
@@ -398,10 +398,10 @@ function ProfilePage() {
 							onValueChange={details => setValues(details.value as number[])}
 						>
 							<Slider.Control>
-								<Slider.Track className='bg-[#2C2C2C]'>
+								<Slider.Track className='bg-[#2C2C2C] h-2'>
 									<Slider.Range className='bg-[#FF027A]' />
 								</Slider.Track>
-								<Slider.Thumbs className='bg-[#FF027A] w-5 h-5' />
+								<Slider.Thumbs className='bg-[#2C2C2C] border-[#FF027A] border-[2px] w-4 h-4' />
 							</Slider.Control>
 						</Slider.Root>
 					</div>
