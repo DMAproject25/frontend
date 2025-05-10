@@ -1,0 +1,40 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.2
+2 info using node@v22.14.0
+3 silly config load:file:C:\Roaming\nvm\v22.14.0\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Пользователь\Desktop\DMA\frontend\.npmrc
+5 silly config load:file:C:\Users\Пользователь\.npmrc
+6 silly config load:file:C:\Users\Пользователь\Desktop\DMA\frontend\Users%USERNAME%AppDataRoamingnpm\etc\npmrc
+7 verbose title npm create vite@latest my-project react
+8 verbose argv "create" "vite@latest" "my-project" "--template" "react"
+9 verbose logfile logs-max:10 dir:C:\Users\Пользователь\Desktop\DMA\frontend\Users%USERNAME%AppDataLocalnpm-cache\_logs\2025-03-03T12_34_48_670Z-
+10 verbose logfile C:\Users\Пользователь\Desktop\DMA\frontend\Users%USERNAME%AppDataLocalnpm-cache\_logs\2025-03-03T12_34_48_670Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/create-vite 272ms (cache miss)
+14 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+15 http fetch GET 200 https://registry.npmjs.org/npm 423ms
+16 silly idealTree buildDeps
+17 silly fetch manifest create-vite@6.3.1
+18 silly packumentCache full:https://registry.npmjs.org/create-vite cache-miss
+19 http fetch GET 200 https://registry.npmjs.org/create-vite 110ms (cache miss)
+20 silly packumentCache full:https://registry.npmjs.org/create-vite set size:undefined disposed:false
+21 silly placeDep ROOT create-vite@6.3.1 OK for:  want: 6.3.1
+22 silly reify moves {}
+23 silly audit bulk request { 'create-vite': [ '6.3.1' ] }
+24 http cache create-vite@https://registry.npmjs.org/create-vite/-/create-vite-6.3.1.tgz 1ms (cache hit)
+25 silly tarball no local data for create-vite@https://registry.npmjs.org/create-vite/-/create-vite-6.3.1.tgz. Extracting by manifest.
+26 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 239ms
+27 silly audit report {}
+28 http fetch GET 200 https://registry.npmjs.org/create-vite/-/create-vite-6.3.1.tgz 486ms (cache miss)
+29 verbose cwd C:\Users\Пользователь\Desktop\DMA\frontend
+30 verbose os Windows_NT 10.0.26100
+31 verbose node v22.14.0
+32 verbose npm  v10.9.2
+33 notice
+33 notice New [31mmajor[39m version of npm available! [31m10.9.2[39m -> [34m11.1.0[39m
+33 notice Changelog: [34mhttps://github.com/npm/cli/releases/tag/v11.1.0[39m
+33 notice To update run: [4mnpm install -g npm@11.1.0[24m
+33 notice  { force: true, [Symbol(proc-log.meta)]: true }
+34 verbose exit 0
+35 info ok
